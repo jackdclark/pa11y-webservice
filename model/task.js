@@ -182,6 +182,7 @@ module.exports = function(app, callback) {
 				return model.getById(id).then(async task => {
 					const pa11yOptions = {
 						standard: task.standard,
+						runners: ['htmlcs', 'axe'],
 						includeWarnings: true,
 						includeNotices: true,
 						timeout: (task.timeout || 30000),
